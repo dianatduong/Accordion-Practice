@@ -26,12 +26,28 @@ class ViewController: UITableViewController {
 
     }
     
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let label = UILabel()
+        label.text = "Header"
+        label.backgroundColor = UIColor.lightGray
+        return label
+    }
+
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return names.count
+
+        if section == 0 {
+            return names.count
+        } else {
+            //returning only 2 cells
+            return 2
+        }
+        
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
