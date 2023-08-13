@@ -15,6 +15,10 @@ class ViewController: UITableViewController {
     let names = [
         "Amanda", "Diana", "John", "Jackson", "Melinda"
     ]
+    
+    let anotherListNames = [
+        "Georgina", "Paul", "Jayson", "Angela"
+    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,18 +47,18 @@ class ViewController: UITableViewController {
 
         if section == 0 {
             return names.count
-        } else {
-            //returning only 2 cells
-            return 2
         }
-        
+            //returning only 2 cells
+            return anotherListNames.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
         
         //variable to hold an individual name
-        let name = names[indexPath.row]
+        //let name = names[indexPath.row]
+        
+         let name = indexPath.section == 0 ? names[indexPath.row] : anotherListNames[indexPath.row]
             
         //output for each cell
         cell.textLabel?.text = "\(name) - Section: \(indexPath.section) Row: \(indexPath.row)"
