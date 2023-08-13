@@ -12,9 +12,6 @@ class ViewController: UITableViewController {
     
     let cellId = "cellId"
     
-    //let aNames = ["Amanda", "Amber", "Angela", "Anthony", "Aaron" ]
-    //let bNames = ["Benny", "Brandon", "Brenda", "Bethany"]
-    
     let twoDimensionalArray = [
         [ "Amanda", "Amber", "Angela", "Anthony", "Aaron" ],
         [ "Benny", "Brandon", "Brenda", "Bethany"],
@@ -51,11 +48,6 @@ class ViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
-        
-        //variable to hold an individual name
-        //let name = names[indexPath.row]
-        
-         //let name = indexPath.section == 0 ? twoDimensionalArray[0][indexPath.row] : twoDimensionalArray[1][indexPath.row]
             
         let name = twoDimensionalArray[indexPath.section][indexPath.row]
         
