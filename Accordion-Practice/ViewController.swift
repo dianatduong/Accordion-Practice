@@ -30,6 +30,7 @@ class ViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
+        //header label for each section
         let label = UILabel()
         label.text = "Header"
         label.backgroundColor = UIColor.lightGray
