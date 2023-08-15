@@ -20,11 +20,26 @@ class ViewController: UITableViewController {
     
     @objc func handleShowIndexPath() {
         print("Attempting reload animation of indexPaths.")
+        
+        //build all the indexPaths we want to reload
+        var indexPathsToReload = [IndexPath]()
+        
+       //build all indexPaths we want to reload
+        for section in twoDimensionalArray.indices {
+            for row in twoDimensionalArray[section].indices {
+                print(section, row)
+                
+                let indexPath = IndexPath(row: row, section: section)
+                indexPathsToReload.append(indexPath)
+            }
+        }
+        //reloading a whole section
+        tableView.reloadRows(at: indexPathsToReload, with: .right)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Show IndexPath", style: .plain, target: self, action: #selector(handleShowIndexPath))
         
         navigationItem.title = "Contacts"
