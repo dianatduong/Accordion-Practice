@@ -12,7 +12,7 @@ class ViewController: UITableViewController {
     
     let cellId = "cellId"
     
-    let twoDimensionalArray = [
+    var twoDimensionalArray = [
         [ "Amanda", "Amber", "Angela", "Anthony", "Aaron" ],
         [ "Benny", "Brandon", "Brenda", "Bethany"],
         [ "Charles", "Christina", "Cynthia", "Colton"]
@@ -58,11 +58,52 @@ class ViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let button = UIButton(type: .system)
+        button.setTitle("Close", for: .normal)
+        button.backgroundColor = .orange
+        button.setTitleColor(.black, for: .normal)
+        button.titleLabel?.font = .boldSystemFont(ofSize: 14)
+        
+        button.addTarget(self, action: #selector(handleExpandClose), for: .touchUpInside)
+        
+        return button
+
+        
+        /*
         //header label for each section
         let label = UILabel()
         label.text = "Header"
         label.backgroundColor = UIColor.lightGray
         return label
+         */
+    }
+    
+    @objc func handleExpandClose() {
+        print("Trying to expand and close")
+        
+        //close the section first  by deleting rows
+        
+        let section = 0
+        //collect all the rows in the section to remove
+        //empty array of IndexPaths
+        var indexPathsArray = [IndexPath]()
+        
+        for row in twoDimensionalArray[section].indices {
+            print (0, row)
+            
+            //what to remove
+            let indexPath = IndexPath(row: row, section: section)
+            indexPathsArray.append(indexPath)
+        }
+        
+        //delete rows
+        twoDimensionalArray[section].removeAll()
+        tableView.deleteRows(at: indexPathsArray, with: .fade)
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 36
     }
 
     
