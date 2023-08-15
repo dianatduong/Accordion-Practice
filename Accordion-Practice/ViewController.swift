@@ -17,10 +17,16 @@ class ViewController: UITableViewController {
         [ "Benny", "Brandon", "Brenda", "Bethany"],
         [ "Charles", "Christina", "Cynthia", "Colton"]
     ]
+    
+    @objc func handleShowIndexPath() {
+        print("Attempting reload animation of indexPaths.")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Show IndexPath", style: .plain, target: self, action: #selector(handleShowIndexPath))
+        
         navigationItem.title = "Contacts"
         navigationController?.navigationBar.prefersLargeTitles = true
         
@@ -29,7 +35,6 @@ class ViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        
         //header label for each section
         let label = UILabel()
         label.text = "Header"
