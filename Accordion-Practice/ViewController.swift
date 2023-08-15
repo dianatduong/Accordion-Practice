@@ -80,9 +80,14 @@ class ViewController: UITableViewController {
             
         let name = twoDimensionalArray[indexPath.section][indexPath.row]
         
-        //output for each cell
-        cell.textLabel?.text = "\(name) - Section: \(indexPath.section) Row: \(indexPath.row)"
-
+        cell.textLabel?.text = "\(name)"
+        
+        //if true
+        if showIndexPaths {
+            //output for each cell
+            cell.textLabel?.text = "\(name) - Section: \(indexPath.section) Row: \(indexPath.row)"
+        }
+        
         return cell
     }
 }
