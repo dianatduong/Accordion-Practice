@@ -67,30 +67,21 @@ class ViewController: UITableViewController {
         
         button.addTarget(self, action: #selector(handleExpandClose), for: .touchUpInside)
         
+        button.tag = section
         return button
-
-        
-        /*
-        //header label for each section
-        let label = UILabel()
-        label.text = "Header"
-        label.backgroundColor = UIColor.lightGray
-        return label
-         */
     }
     
-    @objc func handleExpandClose() {
+    @objc func handleExpandClose(button: UIButton) {
         print("Trying to expand and close")
         
         //close the section first  by deleting rows
-        
-        let section = 0
+        let section = button.tag
         //collect all the rows in the section to remove
         //empty array of IndexPaths
         var indexPathsArray = [IndexPath]()
         
         for row in twoDimensionalArray[section].indices {
-            print (0, row)
+            print (section, row)
             
             //what to remove
             let indexPath = IndexPath(row: row, section: section)
