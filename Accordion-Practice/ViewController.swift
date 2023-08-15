@@ -18,6 +18,8 @@ class ViewController: UITableViewController {
         [ "Charles", "Christina", "Cynthia", "Colton"]
     ]
     
+    var showIndexPaths = false
+    
     @objc func handleShowIndexPath() {
         print("Attempting reload animation of indexPaths.")
         
@@ -33,8 +35,14 @@ class ViewController: UITableViewController {
                 indexPathsToReload.append(indexPath)
             }
         }
+        //true
+        showIndexPaths = !showIndexPaths
+        
+        //determine animation type if true=right/ false=left
+        let animationStyle = showIndexPaths ? UITableView.RowAnimation.right : .left
+        
         //reloading a whole section
-        tableView.reloadRows(at: indexPathsToReload, with: .right)
+        tableView.reloadRows(at: indexPathsToReload, with: animationStyle)
     }
 
     override func viewDidLoad() {
