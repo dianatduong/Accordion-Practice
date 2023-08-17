@@ -11,6 +11,7 @@
 		A3BB746B2A86D050003119D0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BB746A2A86D050003119D0 /* SceneDelegate.swift */; };
 		A3BB746D2A86D050003119D0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BB746C2A86D050003119D0 /* ViewController.swift */; };
 		A3BB74722A86D051003119D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3BB74712A86D051003119D0 /* Assets.xcassets */; };
+		A3C30AD52A8EC4850095855D /* ExpandableNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C30AD42A8EC4850095855D /* ExpandableNames.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		A3BB746C2A86D050003119D0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A3BB74712A86D051003119D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A3BB74762A86D051003119D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A3C30AD42A8EC4850095855D /* ExpandableNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableNames.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 				A3BB74682A86D050003119D0 /* AppDelegate.swift */,
 				A3BB746A2A86D050003119D0 /* SceneDelegate.swift */,
 				A3BB746C2A86D050003119D0 /* ViewController.swift */,
+				A3C30AD42A8EC4850095855D /* ExpandableNames.swift */,
 				A3BB74712A86D051003119D0 /* Assets.xcassets */,
 				A3BB74762A86D051003119D0 /* Info.plist */,
 			);
@@ -130,6 +133,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3C30AD52A8EC4850095855D /* ExpandableNames.swift in Sources */,
 				A3BB746D2A86D050003119D0 /* ViewController.swift in Sources */,
 				A3BB74692A86D050003119D0 /* AppDelegate.swift in Sources */,
 				A3BB746B2A86D050003119D0 /* SceneDelegate.swift in Sources */,
